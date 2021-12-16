@@ -19,18 +19,11 @@ class Solution {
 public:
     // iterative approach
     /*
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         if (!list1) return list2;
         if (!list2) return list1;
-        ListNode* head;
-        if (list1->val < list2->val) {
-            head = list1;
-            list1 = list1->next;
-        } else {
-            head = list2;
-            list2 = list2->next;
-        }
-        ListNode* tail = head;
+        ListNode preHead(-1);
+        ListNode* tail = &preHead;
         while (list1 && list2) {
             if (list1->val < list2->val) {
                 tail->next = list1;
@@ -41,13 +34,9 @@ public:
             }
             tail = tail->next;
         }
-        if (list1) {
-            tail->next = list1;
-        }
-        if (list2) {
-            tail->next = list2;
-        }
-        return head;
+
+        tail->next = list1 ? list1 : list2;
+        return preHead.next;
     }
     */
     // recursive approach
