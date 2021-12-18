@@ -26,6 +26,7 @@ public:
     // divide and conquer approach
     // time complexity: o(n log(n))
     // space complexity: o(1)
+    /*
     int maxSubArray(vector<int>& nums) {
         return solve(nums, 0, nums.size() - 1);
     }
@@ -47,6 +48,18 @@ public:
             mr = max(sum, mr);
         }
         return max(max(lmax, rmax), ml + mr);
+    }
+    */
+    int maxSubArray(vector<int>& nums) {
+        if (nums.empty()) return 0;
+        int maxNum = INT_MIN;
+        int sum = 0;
+        for (int i = 0; i < nums.size(); ++i) {
+            sum += nums[i];
+            maxNum = max(sum, maxNum);
+            if (sum < 0) sum = 0;
+        }
+        return maxNum;
     }
 };
 // @lc code=end
