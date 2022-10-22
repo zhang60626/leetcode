@@ -15,8 +15,7 @@ class Solution {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         int len = r - l + 1;
-        Boolean[] exist = new Boolean[len];
-        Arrays.fill(exist, false);
+        boolean[] exist = new boolean[len];
         int diff;
         
         for (int i = l; i <= r; i++) {

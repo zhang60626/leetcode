@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
 class Solution {
     public List<Boolean> checkArithmeticSubarrays(int[] nums, int[] l, int[] r) {
         int n = nums.length;
@@ -10,7 +14,7 @@ class Solution {
         return answer;
     }
     
-    private Boolean isArithmetic(int[] nums) {
+    private boolean isArithmetic(int[] nums) {
         Arrays.sort(nums);
         int d = nums[1] - nums[0];
         
